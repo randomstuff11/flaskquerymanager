@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Sequence Query Results</h1>
+<div class="container">
+    <p>Below are the results of the executed sequence of queries. Each result is presented as a single line of data from the query.</p>
+    {% for result in results %}
+    <div class="row mb-2">
+        <div class="col">
+            <div class="p-2 bg-light border rounded">{{ result }}</div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
