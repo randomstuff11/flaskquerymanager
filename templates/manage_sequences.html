@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Manage Query Sequences</h1>
+<form action="/add_sequence" method="post">
+    <div class="form-group">
+        <label for="name">Sequence Name:</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea class="form-control" id="description" name="description"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="connection_id">Connection:</label>
+        <select class="form-control" id="connection_id" name="connection_id">
+            <!-- Connection IDs filled dynamically -->
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="queries">Queries (one per line):</label>
+        <textarea class="form-control" id="queries" name="queries[]" rows="5" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Sequence</button>
+</form>
+{% endblock %}
